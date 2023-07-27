@@ -446,7 +446,7 @@ class CustomerQuery {
 $filter = new CustomerFilter();
 $filterItems = $filter->transform($request); // return ['column', 'operator', 'value']
 
-$includeInvoices = $request->query('includeInvoices'); //網址是否有'includeInvoices'查詢
+$includeInvoices = $request->query('includeInvoices'); //網址是否有'includeInvoices=true/false'查詢
 $customers = Customer::where($filterItems); // $filterItems作為sql查詢的where條件式
 
 if ($includeInvoices) {
